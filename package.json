@@ -1,0 +1,31 @@
+{
+  "name": "glottologist",
+  "version": "1.0.0",
+  "description": "An easy to use translator library",
+  "main": "dist/glottologist.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arguiot/Glottologist.git"
+  },
+  "keywords": [
+    "lang",
+    "translate",
+    "language",
+    "framework",
+    "display.js"
+  ],
+  "author": "Arthur Guiot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arguiot/Glottologist/issues"
+  },
+  "homepage": "https://github.com/arguiot/Glottologist#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-rigger": "^0.5.8"
+  }
+}

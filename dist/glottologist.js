@@ -4,6 +4,24 @@
 */
 
 class Glottologist {
+  assign(name, object) {
+  	let obj = {}
+  	obj[name] = object
+  	this.data = Object.assign(this.data, obj)
+  }
+  constructor() {
+  	this.data = {};
+  	this.lang = navigator.language || navigator.userLanguage; 
+  }
+  get(name, lang="auto") {
+  	return lang == "auto" ? this.data[name][new String(this.lang).split("-")[0]] : this.data[name][lang]
+  }
+  render(el, lang="auto") {
+  	el = el instanceof NodeList ? el : document.querySelectorAll(str);
+  	el.forEach(element => {
+  		element.innerHTML = this.get(element.innerHTML, lang)
+  	})
+  }
   t(phrase, lang="en", source="auto") {
   	return new Promise((resolve, reject) => {
   		const url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl="

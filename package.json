@@ -25,6 +25,7 @@
   "homepage": "https://github.com/arguiot/Glottologist#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-babili": "^0.1.4",
     "gulp-rename": "^1.2.2",
     "gulp-rigger": "^0.5.8"
   }

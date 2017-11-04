@@ -1,4 +1,8 @@
-constructor() {
+constructor(lang="en") {
 	this.data = {};
-	this.lang = navigator.language || navigator.userLanguage; 
+	if (navigator) {
+		this.lang = navigator.language || navigator.userLanguage;
+	} else {
+		this.lang = lang
+	}
 }

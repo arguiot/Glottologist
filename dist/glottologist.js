@@ -9,12 +9,41 @@ class Glottologist {
   	obj[name] = object
   	this.data = Object.assign(this.data, obj)
   }
+  async autoGen(name, array) {
+  	let obj = {}
+  	for (let i of array) {
+  		const translated = await this.t(name, i)
+  		obj[i] = translated;
+  	}
+  	this.assign(name, obj)
+  }
   constructor() {
   	this.data = {};
   	this.lang = navigator.language || navigator.userLanguage; 
   }
-  get(name, lang="auto") {
-  	return lang == "auto" ? this.data[name][new String(this.lang).split("-")[0]] : this.data[name][lang]
+  get(name, lang="auto", obj={}) {
+  	let data = {}
+  	if(typeof lang == 'object') {
+  		data = lang
+  		lang = typeof obj == 'string' ? obj : "auto"
+  	}
+  	const result = lang == "auto" ? this.data[name][new String(this.lang).split("-")[0]] : this.data[name][lang]
+  
+  	return eval("\`"+ result +"\`")
+  }
+  import(url) {
+  	return new Promise((resolve, reject) => {
+  		fetch(url).then(res => {
+  			res.json().then(data => {
+  				this.data = Object.assign(this.data, data)
+  				resolve(data)
+  			}).catch(e => {
+  				reject(e)
+  			})
+  		}).catch(e => {
+  			reject(e)
+  		})
+  	})
   }
   render(el, lang="auto") {
   	el = el instanceof NodeList ? el : document.querySelectorAll(str);

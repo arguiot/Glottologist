@@ -17,9 +17,13 @@ class Glottologist {
   	}
   	this.assign(name, obj)
   }
-  constructor() {
+  constructor(lang="en") {
   	this.data = {};
-  	this.lang = navigator.language || navigator.userLanguage; 
+  	if (navigator) {
+  		this.lang = navigator.language || navigator.userLanguage;
+  	} else {
+  		this.lang = lang
+  	}
   }
   get(name, lang="auto", obj={}) {
   	let data = {}
@@ -45,11 +49,12 @@ class Glottologist {
   		})
   	})
   }
-  render(el, lang="auto") {
-  	el = el instanceof NodeList ? el : document.querySelectorAll(str);
-  	el.forEach(element => {
-  		element.innerHTML = this.get(element.innerHTML, lang)
-  	})
+  render(lang = "auto") {
+      const elements = document.querySelectorAll("[glot-model]");
+      for (let i = 0; i < elements.length; i++) {
+          const attr = elements[i].getAttribute("glot-model");
+          elements[i].innerHTML = this.get(attr, lang)
+      }
   }
   t(phrase, lang="en", source="auto") {
   	return new Promise((resolve, reject) => {

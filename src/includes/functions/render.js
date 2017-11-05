@@ -1,6 +1,7 @@
-render(el, lang="auto") {
-	el = el instanceof NodeList ? el : document.querySelectorAll(str);
-	el.forEach(element => {
-		element.innerHTML = this.get(element.innerHTML, lang)
-	})
+render(lang = "auto") {
+    const elements = document.querySelectorAll("[glot-model]");
+    for (let i = 0; i < elements.length; i++) {
+        const attr = elements[i].getAttribute("glot-model");
+        elements[i].innerHTML = this.get(attr, lang)
+    }
 }

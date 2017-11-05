@@ -98,7 +98,7 @@ textarea {
     height: 30px;
     width: 30px;
     position: fixed;
-    z-index: 2;
+    z-index: 20;
     left: 50px;
     top: 30px;
     cursor: pointer;
@@ -127,7 +127,7 @@ textarea {
 
 .nav {
     position: fixed;
-    z-index: 1;
+    z-index: 10;
 }
 
 .nav:before, .nav:after {
@@ -281,12 +281,15 @@ a.black {
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     top: 0;
-	padding-bottom: 300px;
+	padding-bottom: 100vh;
+	overflow-x: hidden;
+	background: #384048;
 }
 
 .main {
     position: absolute;
     top: 0;
+	z-index: 1;
     width: 100vw;
     height: 100vh;
     background: #384048;
@@ -319,10 +322,15 @@ body {
 
 article {
     position: relative;
+	z-index: 1;
     top: 100vh;
-    padding: 3.5rem;
+	width: 100vw;
+	height: auto;
+	padding-bottom: 100vh;
     color: #444;
 	background: white;
+	background-clip: content-box;
+	pointer-events: none;
 }
 
 article>section {
@@ -365,7 +373,7 @@ a.blackline {
 footer {
 	position: fixed;
 	bottom: 0;
-	z-index: -10;
+	padding-top: 200px;
 	background: #384048;
 	color: white;
     text-align: center;

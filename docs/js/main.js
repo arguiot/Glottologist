@@ -1,5 +1,5 @@
 const $ = new DisplayJS();
-
+const glot = new Glottologist();
 
 $.scroll(() => {
     const distance = $.scrollTop();
@@ -19,18 +19,23 @@ $.scroll(() => {
 
 $.on(".menu-icon", "click", () => {
     $.toggleClass("body", "nav-active")
-	if ($.is("body", ".nav-active")) {
-		$.all(".menu-icon__line", el => {
+    if ($.is("body", ".nav-active")) {
+        $.all(".menu-icon__line", el => {
             $.css(el, "background", "black")
         })
-	} else {
-		$.all(".menu-icon__line", el => {
+    } else {
+        $.all(".menu-icon__line", el => {
             $.css(el, "background", "white")
         })
-	}
+    }
 })
 $.all(".black", el => {
     $.on(el, "click", () => {
         $.toggleClass("body", "nav-active")
     })
+})
+
+// translation
+glot.import("lang.json").then(() => {
+	glot.render()
 })

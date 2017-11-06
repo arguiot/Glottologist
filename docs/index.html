@@ -39,19 +39,19 @@
 		</div>
 	</div>
 	<div class="main">
-		<h1 class="head1">
-	    <span class="white h-0">Glottologist is</span>
-	    <span class="h-1">a JavaScript language translation</span>
-	    <span class="white h-3">
-	      framework
-	    </span>
-	  </h1>
+		<h1 class="head1" glot-model="head1">
+		    <span class="white h-0">Glottologist is</span>
+		    <span class="h-1">a JavaScript translation</span>
+		    <span class="white h-3">
+		      framework
+		    </span>
+		</h1>
 	</div>
 	<article>
 		<section class="what">
 			<div class="text">
-				<h2>What is it?</h2>
-				<p>
+				<h2 glot-model="what">What is it?</h2>
+				<p glot-model="what-content">
 					Glottologist is JavaScript framework that works in the browser (or on NodeJS). It will help you to provide a different version of your website, depending on the user language.
 				</p>
 			</div>
@@ -64,8 +64,8 @@
 				<img src="img/graph/optimized.gif" alt="Graph image" class="rounded">
 			</div>
 			<div class="text">
-				<h2>Stay productive</h2>
-				<p>
+				<h2 glot-model="productive">Stay productive</h2>
+				<p glot-model="productive-content">
 					With his well engineered functions, Glottologist will not destroy your already existing app/website. The philosophy behind Glottologist (and my other <a href="https://github.com/arguiot" class="blackline">projects</a>), is that you should only add,
 					not remove or refactorize the code. So, you'll be able to integrate Glottologist with each of your projects 😊.
 				</p>
@@ -73,8 +73,8 @@
 		</section>
 		<section class="install" id="install">
 			<div class="text">
-				<h2>Installation</h2>
-				<p>
+				<h2 glot-model="install">Installation</h2>
+				<p glot-model="install-content">
 					Glottologist is simple to install and setup. Here is how you install the browser and node version.
 				</p>
 			</div>
@@ -96,6 +96,7 @@
 	</footer>
 	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/DisplayJS/2.1.1/display.min.js" integrity="sha256-Tzv6ekQ48/jsmly9eR9t/6VQheVZUXUFjNcZQW33hFE=" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/glottologist"></script>
 	<script src="js/plugins.js"></script>
 	<script src="js/main.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />

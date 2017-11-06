@@ -1,0 +1,37 @@
+{
+    "head1": {
+        "en": "<span class=\"white h-0\">Glottologist is</span>\n\t\t<span class=\"h-1\">a JavaScript translation</span>\n\t\t<span class=\"white h-3\">\n\t\t  framework\n\t\t</span>",
+        "fr": "<span class=\"white h-0\">Glottologist est un framework</span>\n\t\t<span class=\"h-1\">JavaScript de traduction</span>",
+        "zh": "<span class=\"white h-0\">GLOTTOLOGIST是</span><span class=\"h-1\">一个JAVASCRIPT语言</span><span class=\"white h-1\">框架</span>"
+    },
+    "what": {
+        "en": "What is it?",
+        "fr": "Qu'est-ce que c'est?",
+        "zh": "它是什么？"
+    },
+    "what-content": {
+        "en": "Glottologist is JavaScript framework that works in the browser (or on NodeJS). It will help you to provide a different version of your website, depending on the user language.",
+        "fr": "Glottologist est un framework JavaScript qui fonctionne dans le navigateur (ou dans NodeJS). Il vous aidera a proposer une version differente de votre site, en fonction du language de vos utilisateurs.",
+        "zh": "Glottologist是在浏览器（或NodeJS）上工作的JavaScript框架。它将帮助您提供不同版本的网站，具体取决于用户的语言。"
+    },
+    "productive": {
+        "en": "Stay productive",
+        "fr": "Restez productif",
+        "zh": "保持生产力"
+    },
+    "productive-content": {
+        "en": "With his well engineered functions, Glottologist will not destroy your already existing app/website. The philosophy behind Glottologist (and my other <a href=\"https://github.com/arguiot\" class=\"blackline\">projects</a>), is that you should only add,\n\tnot remove or refactorize the code. So, you'll be able to integrate Glottologist with each of your projects 😊.",
+        "fr": "Grâce à ses fonctions bien conçues, Glottologist ne détruira pas votre application / site web déjà existant. La philosophie derrière Glottologist (ainsi que mes autres <a href=\"https://github.com/arguiot\" class=\"blackline\"> projets </a>), c'est que vous devriez seulement ajouter,\net ne pas supprimer ou refactoriser le code. Ainsi, vous serez en mesure d'intégrer Glottologist avec chacun de vos projets 😊.",
+        "zh": "凭借他精心设计的功能，Glottologist不会破坏您已有的应用程序/网站。Glottologist（和我的其他<a href=\"https://github.com/arguiot\" class=\"blackline\">项目</a> ）背后的哲学是，你应该只添加，而不是删除或重构代码。因此，您可以将Glottologist与您的每个项目集成在一起。"
+    },
+    "install": {
+        "en": "Installation",
+        "fr": "Installation",
+        "zh": "安装"
+    },
+    "install-content": {
+        "en": "Glottologist is simple to install and setup. Here is how you install the browser and node version.",
+        "fr": "Glottologist est simple a installer et setup. Voici comment installer la version navigateur, suivis de NodeJS.",
+        "zh": "Glottologist很容易安装和设置。以下是您如何安装浏览器和节点版本。"
+    }
+}

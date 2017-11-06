@@ -4,7 +4,9 @@
   "description": "An easy to use translator library",
   "main": "dist/glottologist.js",
   "scripts": {
-    "test": "gulp"
+    "test": "npm run gulp && npm run eye",
+    "gulp": "gulp",
+    "eye": "eye"
   },
   "repository": {
     "type": "git",
@@ -24,6 +26,7 @@
   },
   "homepage": "https://github.com/arguiot/Glottologist#readme",
   "devDependencies": {
+    "eye.js": "^0.2.0",
     "gulp": "^3.9.1",
     "gulp-babili": "^0.1.4",
     "gulp-rename": "^1.2.2",

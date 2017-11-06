@@ -1,4 +1,19 @@
 {
+	"docs": {
+		"en": "Docs",
+		"fr": "Documentation",
+		"zh": "文件"
+	},
+	"install": {
+		"en": "install",
+		"fr": "Installation",
+		"zh": "安装"
+	},
+	"contact": {
+		"en": "Contact",
+		"fr": "Contact",
+		"zh": "联系"
+	},
     "head1": {
         "en": "<span class=\"white h-0\">Glottologist is</span>\n\t\t<span class=\"h-1\">a JavaScript translation</span>\n\t\t<span class=\"white h-3\">\n\t\t  framework\n\t\t</span>",
         "fr": "<span class=\"white h-0\">Glottologist est un framework</span>\n\t\t<span class=\"h-1\">JavaScript de traduction</span>",
@@ -31,7 +46,7 @@
     },
     "install-content": {
         "en": "Glottologist is simple to install and setup. Here is how you install the browser and node version.",
-        "fr": "Glottologist est simple a installer et setup. Voici comment installer la version navigateur, suivis de NodeJS.",
+        "fr": "Glottologist est simple à installer et à setup. Voici comment installer la version navigateur, suivis de NodeJS.",
         "zh": "Glottologist很容易安装和设置。以下是您如何安装浏览器和节点版本。"
     }
 }

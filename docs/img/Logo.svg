@@ -1,0 +1,34 @@
+<svg width="2000" height="2000" viewBox="0 0 2000 2000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Logo</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-6763 470)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M 6763 -470L 8763 -470L 8763 1530L 6763 1530L 6763 -470Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="Logo" clip-path="url(#clip-0)">
+<mask id="mask0_alpha" mask-type="alpha">
+<g id="Ellipse">
+<use xlink:href="#path0_fill" transform="translate(6763 -470)" fill="#384048"/>
+</g>
+</mask>
+<g id="Ellipse 3" mask="url(#mask0_alpha)">
+<use xlink:href="#path0_fill" transform="translate(6763 -470)" fill="#384048"/>
+</g>
+<g id="Vector" mask="url(#mask0_alpha)">
+<use xlink:href="#path1_fill" transform="translate(7377 281.5)" fill="#2D343A"/>
+<use xlink:href="#path2_fill" transform="translate(7377 281.5)" fill="#2D343A"/>
+</g>
+<g id="Ellipse 2" mask="url(#mask0_alpha)">
+<use xlink:href="#path3_fill" transform="translate(7363 160)" fill="#E8BD36"/>
+<use xlink:href="#path4_fill" transform="translate(7363 160)" fill="#E8BD36"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 2000 1000C 2000 1552.28 1552.28 2000 1000 2000C 447.715 2000 0 1552.28 0 1000C 0 447.715 447.715 0 1000 0C 1552.28 0 2000 447.715 2000 1000Z"/>
+<path id="path1_fill" d="M 0 677L 256.5 437.317L 724.5 0L 1386.5 619.5L 1386.5 1248.5L 582 1248.5L 0 677Z"/>
+<path id="path2_fill" d="M 85 391.5L 193.164 496.5L 256.5 437.317L 157.5 350.5L 85 391.5Z"/>
+<path id="path3_fill" d="M 827 311.284C 827 483.201 641.87 622.568 413.5 622.568C 380.586 622.568 348.571 619.673 317.878 614.203C 253.793 602.782 195.476 580.134 146.792 549.171C 57.0142 492.07 0 406.689 0 311.284C 0 139.367 185.13 0 413.5 0C 641.87 0 827 139.367 827 311.284Z"/>
+<path id="path4_fill" d="M 146.792 549.171L 11.8881 800L 317.878 614.203C 253.793 602.782 195.476 580.134 146.792 549.171Z"/>
+</defs>
+</svg>

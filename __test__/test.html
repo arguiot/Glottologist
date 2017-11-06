@@ -1,0 +1,47 @@
+<h1 glot-model="hello">Hello World!</h1>
+
+<script src="/eyejs/" charset="utf-8"></script>
+<script src="/static/glottologist.js"></script>
+
+<script>
+const glot = new Glottologist();
+
+// same tests in the browser
+glot.assign("Hello", {
+	"en": "Hello",
+	"fr": "Bonjour"
+})
+glot.assign("Hello name", {
+	"en": "Hello ${data.name}",
+	"fr": "Bonjour ${data.name}"
+})
+eye.test(
+	$ => $(glot.get("Hello", "en")).Equal("Hello"),
+	$ => $(glot.get("Hello", "fr")).Equal("Bonjour")
+)
+eye.test(
+	$ => $(glot.get("Hello name", { name: "Arthur" }, "en")).Equal("Hello Arthur"),
+	$ => $(glot.get("Hello name", { name: "Arthur" }, "fr")).Equal("Bonjour Arthur")
+)
+
+// real tests
+glot.assign("hello", {
+	"en": "Hello World!",
+	"fr": "Bonjour le monde!"
+})
+const el = document.querySelector("h1");
+glot.render("en")
+eye.test(
+	$ => $(el.innerHTML).Equal(glot.get("hello", "en"))
+)
+glot.render("fr")
+eye.test(
+	$ => $(el.innerHTML).Equal(glot.get("hello", "fr"))
+)
+glot.t("Hello", "fr").then(txt => {
+	eye.test(
+		$ => $(txt).Equal("Bonjour")
+	)
+	eye.checkout();
+})
+</script>

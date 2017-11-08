@@ -55,8 +55,7 @@
     },
     "install-content": {
         "en": "Glottologist is simple to install and setup. Here is how you install the browser and NodeJS version.",
-		"sp": "Glottologist es simple de instalar y configurar. Aquí se explica cómo instalar el navegador
-		y la versión del NodeJS.",
+		"sp": "Glottologist es simple de instalar y configurar. Aquí se explica cómo instalar el navegador y la versión del NodeJS.",
         "fr": "Glottologist est simple à installer et à setup. Voici comment installer la version navigateur, suivis de NodeJS.",
         "zh": "Glottologist很容易安装和设置。以下是您如何安装浏览器和节点版本。"
     }

@@ -1,7 +1,11 @@
 <div align="center">
-<h1>Glottologist</h1>
 
-A JavaScript language translation framework.<br>
+<img src="https://glottologist.js.org/img/Logo.svg" width="300">
+
+# Glottologist
+A JavaScript language translation framework.
+</div>
+<br>
 
 [![GitHub release](https://img.shields.io/github/release/arguiot/Glottologist.svg)](https://github.com/arguiot/Glottologist/releases)
 [![Build Status](https://travis-ci.org/arguiot/Glottologist.svg?branch=master)](https://travis-ci.org/arguiot/Glottologist)

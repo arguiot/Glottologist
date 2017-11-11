@@ -4,7 +4,6 @@
 
 # Glottologist
 A JavaScript language translation framework.
-</div>
 <br>
 
 [![GitHub release](https://img.shields.io/github/release/arguiot/Glottologist.svg)](https://github.com/arguiot/Glottologist/releases)

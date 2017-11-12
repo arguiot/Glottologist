@@ -348,8 +348,12 @@ article>section:last-child {
 }
 article>section>.text {
     width: 30vw;
+	min-width: 300px;
 }
-
+article>section>.img {
+    width: 30vw;
+    min-width: 300px;
+}
 article>section>.img>img {
     width: 30vw;
     min-width: 300px;

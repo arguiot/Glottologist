@@ -2,7 +2,7 @@
   "name": "glottologist",
   "version": "1.0.0",
   "description": "An easy to use translator library",
-  "main": "dist/glottologist.js",
+  "main": "dist/glottologist.min.js",
   "scripts": {
     "test": "npm run gulp && npm run eye",
     "gulp": "gulp",

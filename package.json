@@ -26,9 +26,9 @@
   },
   "homepage": "https://github.com/arguiot/Glottologist#readme",
   "devDependencies": {
-    "eye.js": "^0.2.0",
+    "eye.js": "^1.1.1",
     "gulp": "^3.9.1",
-    "gulp-babili": "^0.1.4",
+    "gulp-babel-minify": "^0.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-rigger": "^0.5.8"
   }

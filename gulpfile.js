@@ -1,7 +1,7 @@
 const gulp = require("gulp");
 const rigger = require("gulp-rigger");
 const rename = require("gulp-rename");
-const babili = require("gulp-babili");
+const babili = require("gulp-babel-minify");
 gulp.task("copy", () => {
     gulp
         .src("src/*.js")
@@ -27,4 +27,13 @@ gulp.task("minify", () => {
         }))
         .pipe(gulp.dest("dist"));
 })
-gulp.task("default", ["copy", "minify"])
+gulp.task("test", () => {
+    gulp
+        .src("src/*.js")
+        .pipe(rigger())
+        .pipe(rename({
+            basename: "glottologist"
+        }))
+        .pipe(gulp.dest("__test__"));
+});
+gulp.task("default", ["copy", "minify", "test"])

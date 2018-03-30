@@ -27,14 +27,4 @@ gulp.task("minify", () => {
         }))
         .pipe(gulp.dest("dist"));
 })
-
-gulp.task("test", () => {
-    gulp
-        .src("src/*.js")
-        .pipe(rigger())
-        .pipe(rename({
-            basename: "glottologist"
-        }))
-        .pipe(gulp.dest("__test__"));
-});
-gulp.task("default", ["copy", "minify", "test"])
+gulp.task("default", ["copy", "minify"])

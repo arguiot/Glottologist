@@ -8,10 +8,10 @@ get(name, lang = "auto", obj = {}) {
 	let result;
     if (lang == "auto") {
 		tmp = this.data[name][new String(this.lang).split("-")[0]]
-        result = tmp == "undefined" ? this.data[name][Object.keys(this.data[name])[0]] : tmp
+        result = tmp == undefined ? this.data[name][Object.keys(this.data[name])[0]] : tmp
     } else {
 		tmp = this.data[name][lang];
-		result = tmp == "undefined" ? this.data[name][Object.keys(this.data[name])[0]] : tmp
+		result = tmp == undefined ? this.data[name][Object.keys(this.data[name])[0]] : tmp
 	}
 
     return eval("\`" + result + "\`")

@@ -17,6 +17,12 @@ eye.describe("Node", () => {
 		$ => $(glot.get("Hello name", { name: "Arthur" })).Equal("Hello Arthur"),
 		$ => $(glot.get("Hello name", { name: "Arthur" }, "fr")).Equal("Bonjour Arthur")
 	)
+	eye.test("Server", "node",
+		$ => $(glot.serverRender("<h1 glot-model=\"Hello\">Hello</h1>", "fr")).Equal("<html><head></head><body><h1 glot-model=\"Hello\">Bonjour</h1></body></html>"),
+		$ => $(() => {
+			glot.serverRender("<h1 glot-model=\"Hello\">Hello</h1>", "fr")
+		}).perf(10)
+	)
 })
 
 eye.test("Browser", "browser", __testDir + "test.html")

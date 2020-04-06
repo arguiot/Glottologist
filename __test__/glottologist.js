@@ -14,9 +14,9 @@ class Glottologist {
       for (let i = 0; i < elements.length; i++) {
           const attr = elements[i].getAttribute("glot-model");
           let obj = {}
-  		for (let i of array) {
-  			const translated = await this.gTranslate(elements[i].innerHTML, i)
-  			obj[i] = translated;
+  		for (let a of array) {
+  			const translated = await this.gTranslate(elements[i].innerHTML, a)
+  			obj[a] = translated;
   		}
   		this.assign(attr, obj)
       }
@@ -24,6 +24,9 @@ class Glottologist {
   constructor(lang="en") {
   	this.data = {};
   	this.pageLang = lang
+  	if (typeof require === "function") {
+  		this.JSDOM = require("jsdom").JSDOM
+  	}
   	if (typeof window !== 'undefined') {
   		this.lang = navigator.language || navigator.userLanguage;
   	} else {
@@ -103,6 +106,22 @@ class Glottologist {
               elements[i].innerHTML =  model
           }
       }
+  }
+  serverRender(html, lang) {
+      if (typeof this.JSDOM == "undefined") {
+          return
+      }
+      const dom = new this.JSDOM(html)
+      const { document } = dom.window
+      const elements = document.querySelectorAll("[glot-model]");
+      for (let i = 0; i < elements.length; i++) {
+          const attr = elements[i].getAttribute("glot-model");
+          const model = this.get(attr, lang)
+          if (model != null && this.pageLang != lang) {
+              elements[i].innerHTML =  model
+          }
+      }
+      return dom.serialize()
   }
 }
 // Browserify / Node.js

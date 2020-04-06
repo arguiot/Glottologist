@@ -1,4 +1,4 @@
-t(phrase, lang="en", source="auto") {
+gTranslate(phrase, lang="en", source="auto") {
 	return new Promise((resolve, reject) => {
 		const url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl="
 	            + source + "&tl=" + lang + "&dt=t&q=" + encodeURI(phrase);

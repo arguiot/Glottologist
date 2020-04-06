@@ -2,18 +2,18 @@ const gulp = require("gulp");
 const rigger = require("gulp-rigger");
 const rename = require("gulp-rename");
 const babili = require("gulp-babel-minify");
-gulp.task("copy", () => {
-    gulp
+const copy = () => {
+    return gulp
         .src("src/*.js")
         .pipe(rigger())
         .pipe(rename({
             basename: "glottologist"
         }))
         .pipe(gulp.dest("dist"));
-});
+};
 
-gulp.task("minify", () => {
-    gulp
+const minify = () => {
+    return gulp
         .src("src/*.js")
         .pipe(rigger())
         .pipe(babili({
@@ -26,14 +26,17 @@ gulp.task("minify", () => {
 			suffix: ".min"
         }))
         .pipe(gulp.dest("dist"));
-})
-gulp.task("test", () => {
-    gulp
+}
+const test = () => {
+    return gulp
         .src("src/*.js")
         .pipe(rigger())
         .pipe(rename({
             basename: "glottologist"
         }))
         .pipe(gulp.dest("__test__"));
-});
-gulp.task("default", ["copy", "minify", "test"])
+};
+exports.copy = copy;
+exports.minify = minify;
+exports.test = test;
+exports.default = gulp.parallel(copy, minify, test);

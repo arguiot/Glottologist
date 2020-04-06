@@ -38,7 +38,7 @@ glot.render("fr")
 eye.test(
 	$ => $(el.innerHTML).Equal(glot.get("hello", "fr"))
 )
-glot.t("Hello", "fr").then(txt => {
+glot.gTranslate("Hello", "fr").then(txt => {
 	eye.test(
 		$ => $(txt).Equal("Bonjour")
 	)

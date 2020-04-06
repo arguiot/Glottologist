@@ -9,21 +9,41 @@ class Glottologist {
   	obj[name] = object
   	this.data = Object.assign(this.data, obj)
   }
-  async autoGen(name, array) {
-  	let obj = {}
-  	for (let i of array) {
-  		const translated = await this.t(name, i)
-  		obj[i] = translated;
-  	}
-  	this.assign(name, obj)
+  async autoGen(array) {
+  	const elements = document.querySelectorAll("[glot-model]");
+      for (let i = 0; i < elements.length; i++) {
+          const attr = elements[i].getAttribute("glot-model");
+          let obj = {}
+  		for (let i of array) {
+  			const translated = await this.gTranslate(elements[i].innerHTML, i)
+  			obj[i] = translated;
+  		}
+  		this.assign(attr, obj)
+      }
   }
   constructor(lang="en") {
   	this.data = {};
+  	this.pageLang = lang
   	if (typeof window !== 'undefined') {
   		this.lang = navigator.language || navigator.userLanguage;
   	} else {
   		this.lang = lang
   	}
+  }
+  gTranslate(phrase, lang="en", source="auto") {
+  	return new Promise((resolve, reject) => {
+  		const url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl="
+  	            + source + "&tl=" + lang + "&dt=t&q=" + encodeURI(phrase);
+  		fetch(url).then(res => {
+  			res.json().then(data => {
+  				resolve(data[0][0][0])
+  			}).catch(e => {
+  				reject(e)
+  			})
+  		}).catch(e => {
+  			reject(e)
+  		})
+  	})
   }
   get(name, lang = "auto", obj = {}) {
       let data = {}
@@ -57,27 +77,32 @@ class Glottologist {
   		})
   	})
   }
+  locale() {
+      const args = [...arguments]
+      if (args.length == 0) {
+          if (typeof window !== 'undefined') {
+              const userLanguage = navigator.language || navigator.userLanguage;
+              const lang = new String(this.lang).split("-")[0]
+              this.lang = lang
+              return this.lang
+          } else {
+              this.lang = "en" // Default language
+              return this.lang
+          }
+          
+      }
+      this.lang = args[0]
+      return this.lang
+  }
   render(lang = "auto") {
       const elements = document.querySelectorAll("[glot-model]");
       for (let i = 0; i < elements.length; i++) {
           const attr = elements[i].getAttribute("glot-model");
-          elements[i].innerHTML = this.get(attr, lang)
+          const model = this.get(attr, lang)
+          if (model != null && this.pageLang != lang) {
+              elements[i].innerHTML =  model
+          }
       }
-  }
-  t(phrase, lang="en", source="auto") {
-  	return new Promise((resolve, reject) => {
-  		const url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl="
-  	            + source + "&tl=" + lang + "&dt=t&q=" + encodeURI(phrase);
-  		fetch(url).then(res => {
-  			res.json().then(data => {
-  				resolve(data[0][0][0])
-  			}).catch(e => {
-  				reject(e)
-  			})
-  		}).catch(e => {
-  			reject(e)
-  		})
-  	})
   }
 }
 // Browserify / Node.js

@@ -106,6 +106,12 @@ class Glottologist {
               elements[i].innerHTML =  model
           }
       }
+      if (lang == "auto") {
+          this.pageLang = new String(this.lang).split("-")[0]
+      } else {
+          this.pageLang = lang
+      }
+      document.documentElement.setAttribute("lang", this.pageLang)
   }
   serverRender(html, lang) {
       if (typeof this.JSDOM == "undefined") {
@@ -121,6 +127,13 @@ class Glottologist {
               elements[i].innerHTML =  model
           }
       }
+      if (lang == "auto") {
+          this.pageLang = new String(this.lang).split("-")[0]
+      } else {
+          this.pageLang = lang
+      }
+      document.documentElement.setAttribute("lang", this.pageLang)
+      
       return dom.serialize()
   }
 }

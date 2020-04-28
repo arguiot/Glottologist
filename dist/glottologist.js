@@ -21,6 +21,13 @@ class Glottologist {
   		this.assign(attr, obj)
       }
   }
+  codeGen() {
+      const keys = Object.keys(this.data)
+      let tmp = ""
+      for (let i = 0; i < keys.length; i++) {
+          tmp += `glot.assign("${keys[i]}", ${JSON.stringify(this.data[keys[i]], null, 2)})\n`
+      }
+  }
   constructor(lang="en") {
   	this.data = {};
   	this.pageLang = lang
@@ -55,7 +62,10 @@ class Glottologist {
           lang = typeof obj == 'string' ? obj : "auto"
       }
   	let tmp;
-  	let result;
+      let result;
+      if (typeof this.data[name] == "undefined") {
+          return null
+      }
       if (lang == "auto") {
   		tmp = this.data[name][new String(this.lang).split("-")[0]]
           result = tmp == undefined ? this.data[name][Object.keys(this.data[name])[0]] : tmp

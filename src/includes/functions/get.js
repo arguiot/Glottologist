@@ -5,7 +5,10 @@ get(name, lang = "auto", obj = {}) {
         lang = typeof obj == 'string' ? obj : "auto"
     }
 	let tmp;
-	let result;
+    let result;
+    if (typeof this.data[name] == "undefined") {
+        return null
+    }
     if (lang == "auto") {
 		tmp = this.data[name][new String(this.lang).split("-")[0]]
         result = tmp == undefined ? this.data[name][Object.keys(this.data[name])[0]] : tmp

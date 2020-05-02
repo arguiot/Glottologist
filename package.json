@@ -1,6 +1,6 @@
 {
   "name": "glottologist",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "An easy to use translator library",
   "main": "dist/glottologist.min.js",
   "scripts": {

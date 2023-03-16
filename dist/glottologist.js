@@ -68,7 +68,10 @@ class Glottologist {
           return null
       }
       if (lang == "auto") {
-  		tmp = this.data[name][new String(this.lang).split("-")[0]]
+  		tmp = this.data[name][this.lang];
+          if (!tmp && this.lang.includes("-")) {
+              tmp = this.data[name][new String(this.lang).split("-")[0]];
+          }
           result = tmp == undefined ? this.data[name][Object.keys(this.data[name])[0]] : tmp
       } else {
   		tmp = this.data[name][lang];

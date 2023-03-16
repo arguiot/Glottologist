@@ -3,7 +3,9 @@ const glot = require(__testDir + "../dist/glottologist.js")
 eye.describe("Node", () => {
 	glot.assign("Hello", {
 		"en": "Hello",
-		"fr": "Bonjour"
+		"fr": "Bonjour",
+		"zh": "zh 你好",
+		"zh-CN": "zh-CN 你好"
 	})
 	glot.assign("Hello name", {
 		"en": "Hello ${data.name}",
@@ -11,7 +13,13 @@ eye.describe("Node", () => {
 	})
 	eye.test("Get + Assign", "node",
 		$ => $(glot.get("Hello")).Equal("Hello"),
-		$ => $(glot.get("Hello", "fr")).Equal("Bonjour")
+		$ => $(glot.get("Hello", "fr")).Equal("Bonjour"),
+		$ => $(glot.get("Hello", "zh-CN")).Equal("zh-CN 你好"),
+		$ => $(glot.get("Hello", "zh")).Equal("zh 你好"),
+	)
+	eye.test("Get Models", "node",
+		$ => $(glot.get("Hello name", { name: "Arthur" })).Equal("Hello Arthur"),
+		$ => $(glot.get("Hello name", { name: "Arthur" }, "fr")).Equal("Bonjour Arthur")
 	)
 	eye.test("Get Models", "node",
 		$ => $(glot.get("Hello name", { name: "Arthur" })).Equal("Hello Arthur"),
